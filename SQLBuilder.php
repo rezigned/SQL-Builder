@@ -23,7 +23,7 @@
  * $q->to_sql() will compose an sql 'SELECT * FROM users u WHERE date_created < ?' 
  * 
  * - Arbitary condition
- * $q->filter('u.setting_id IS NOT NULL') 
+ * $q->filter('u.setting_id IS NOT NULL')
  * will compose an sql 'SELECT * FROM users u WHERE u.setting IS NOT NULL
  */
 class SQLBuilder {
