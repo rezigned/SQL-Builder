@@ -10,8 +10,7 @@
  */
 
 /**
- * 
- * @example 
+ * Quick overview & usage
  * 
  * $q = new SQLBuilder('users', 'u')
  * 
@@ -30,9 +29,19 @@
  * >> SELECT * FROM users u WHERE u.setting IS NOT NUL
  */
 class SQLBuilder {
-    
+              /**
+               * Base table
+               *
+               * @var array 
+               */
     protected $table,
+              /**
+               * @var array
+               */
               $limit,
+              /**
+               * @var array
+               */
               $group,
               $having,
               $orders  = array(),
@@ -53,8 +62,8 @@ class SQLBuilder {
     /**
      * Filter your result out by various conditions
      * 
-     * @param  type       $key    
-     * @param  type       $op
+     * @param  string     $key    
+     * @param  string     $op
      * @param  string     $val
      * @return SQLBuilder 
      * 
@@ -86,7 +95,7 @@ class SQLBuilder {
     }
     
     /**
-     * Comple sql statement and group all params into $params array
+     * Compile sql statement and group all params into $params array
      * 
      * @return string
      */
@@ -111,7 +120,7 @@ class SQLBuilder {
     }
     
     /**
-     * Add order by to your query
+     * Add `order by` clause
      * 
      * @param string $order 
      * 
@@ -128,7 +137,6 @@ class SQLBuilder {
     }
     
     /**
-     * 
      * Add limit and offset to your query
      * 
      * @param  int  $limit  
@@ -202,7 +210,7 @@ class SQLBuilder {
     }
     
     /**
-     * Compile an sql in to SQL statement
+     * Compile sql in to SQL statement
      * 
      * @return string 
      */
@@ -255,7 +263,7 @@ class SQLBuilder {
     }
     
     /**
-     * Return all params
+     * Return all params for this query
      * 
      * @return type 
      */
@@ -263,7 +271,14 @@ class SQLBuilder {
         return $this->params;
     }
     
-    public function reset() { }
+    /**
+     * Reset all properties to initial state
+     */
+    public function reset() { 
+
+        foreach(get_class_vars($this) as $key)
+            $this->$key = array();
+    }
     
     /**
      * Another way to get an sql by evaulate it as string.
