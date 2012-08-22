@@ -2,7 +2,8 @@
 /**
  * SQL Builder library - Construct SQL Statement in a simpler style.
  *
- * @copyright Copyright (c) 2011 @rezigned
+ * @copyright Copyright (c) 2011 @MAQE
+ * @author  @rezigned
  * @license Licensed under the MIT License
  * @version 0.1.1
  * @package SQL
