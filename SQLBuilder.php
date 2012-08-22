@@ -2,11 +2,11 @@
 /**
  * SQL Builder library - Construct SQL Statement in a simpler style.
  *
- * @copyright Copyright (c) 2011 MAQE
- * @author    @rezigned
- * @license   Licensed under the MIT License
- * @version   0.1.1
- * @package   SQL
+ * @copyright  Copyright (c) 2011 MAQE
+ * @author     @rezigned
+ * @license    Licensed under the MIT License
+ * @version    0.1.1
+ * @package    SQL
  */
 
 /**
@@ -17,15 +17,17 @@
  * 
  * - Simple where clause condition
  * $q->filter('username', 'admin')
- * $q->to_sql() will compose an sql 'SELECT * FROM users u WHERE username=?' 
+ * $q->to_sql() will compose an sql 
+ * >> SELECT * FROM users u WHERE username=?
  * 
  * - More complex where condition
  * $q->filter('date_created', '<', time())
- * $q->to_sql() will compose an sql 'SELECT * FROM users u WHERE date_created < ?' 
+ * $q->to_sql() 
+ * >> SELECT * FROM users u WHERE date_created < ?
  * 
  * - Arbitary condition
  * $q->filter('u.setting_id IS NOT NULL')
- * will compose an sql 'SELECT * FROM users u WHERE u.setting IS NOT NULL
+ * >> SELECT * FROM users u WHERE u.setting IS NOT NUL
  */
 class SQLBuilder {
     
@@ -51,9 +53,9 @@ class SQLBuilder {
     /**
      * Filter your result out by various conditions
      * 
-     * @param type $key    
-     * @param type $op
-     * @param string $val
+     * @param  type       $key    
+     * @param  type       $op
+     * @param  string     $val
      * @return SQLBuilder 
      * 
      * @example
@@ -180,9 +182,9 @@ class SQLBuilder {
     /**
      * Perform a join clause
      * 
-     * @param string $table
-     * @param string $condition
-     * @param string $type
+     * @param  string     $table
+     * @param  string     $condition
+     * @param  string     $type
      * @return SQLBuilder 
      * 
      * @example join('group_members', 'g', 'g.group_id=m.member_id')
