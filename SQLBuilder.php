@@ -265,7 +265,7 @@ class SQLBuilder {
     /**
      * Return all params for this query
      * 
-     * @return type 
+     * @return array 
      */
     public function params() {
         return $this->params;
@@ -284,7 +284,7 @@ class SQLBuilder {
      * Another way to get an sql by evaulate it as string.
      * 
      * @example (string)$sql
-     * @return  type 
+     * @return  string 
      */
     public function __toString() {
         return $this->to_sql();
